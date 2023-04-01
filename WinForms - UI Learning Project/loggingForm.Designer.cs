@@ -141,6 +141,7 @@
             this.logInButton.TabIndex = 6;
             this.logInButton.Text = "Log In";
             this.logInButton.UseVisualStyleBackColor = false;
+            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
             this.logInButton.MouseLeave += new System.EventHandler(this.logInButton_MouseLeave);
             this.logInButton.MouseHover += new System.EventHandler(this.logInButton_MouseHover);
             // 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace WinForms___UI_Learning_Project
 {
@@ -26,7 +27,21 @@ namespace WinForms___UI_Learning_Project
 
         public static void uploadData(string _username, string _password)
         {
-            File.AppendAllText(path, _username + " " + _password);
+            File.AppendAllText(path, _username + " " + _password + "\n");
+        }
+
+        public static bool checkData(string _username, string _password)
+        {
+            string[] lines = File.ReadAllLines(path);
+            foreach(string line in lines)
+            {
+                string[] words = line.Split(' ');
+                if (words[0] == _username && words[1] == _password)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }

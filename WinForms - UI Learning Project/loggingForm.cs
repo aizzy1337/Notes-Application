@@ -3,7 +3,8 @@ namespace WinForms___UI_Learning_Project
     public partial class loggingForm : Form
     {
 
-        private createAccountForm createAccountForm;
+        private createAccountForm _createAccountForm;
+        private mainApplicationForm _mainApplicationForm;
 
         public loggingForm()
         {
@@ -62,8 +63,22 @@ namespace WinForms___UI_Learning_Project
 
         private void createAccountButton_Click(object sender, EventArgs e)
         {
-            createAccountForm = new createAccountForm();
-            createAccountForm.Show();
+            _createAccountForm = new createAccountForm();
+            _createAccountForm.Show();
+        }
+
+        private void logInButton_Click(object sender, EventArgs e)
+        {
+            if(database.checkData(usernameText.Text, passwordText.Text))
+            {
+                _mainApplicationForm = new mainApplicationForm();
+                _mainApplicationForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Niepoprawne dane logowania!");
+            }
         }
     }
 }

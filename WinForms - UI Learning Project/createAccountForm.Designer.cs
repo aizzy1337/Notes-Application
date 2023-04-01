@@ -38,6 +38,7 @@
             this.createAccountRegisterButton = new System.Windows.Forms.Button();
             this.validUsernameLabel = new System.Windows.Forms.Label();
             this.validPasswordLabel = new System.Windows.Forms.Label();
+            this.validRepeatLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // closeButtonRegisterPanel
@@ -124,6 +125,8 @@
             this.passwordRepeatText.Size = new System.Drawing.Size(350, 33);
             this.passwordRepeatText.TabIndex = 11;
             this.passwordRepeatText.UseSystemPasswordChar = true;
+            this.passwordRepeatText.Click += new System.EventHandler(this.passwordRepeatText_Click);
+            this.passwordRepeatText.TextChanged += new System.EventHandler(this.passwordRepeatText_TextChanged);
             // 
             // passwordRepeatLabel
             // 
@@ -166,11 +169,20 @@
             // validPasswordLabel
             // 
             this.validPasswordLabel.AutoSize = true;
-            this.validPasswordLabel.Location = new System.Drawing.Point(84, 521);
+            this.validPasswordLabel.Location = new System.Drawing.Point(84, 525);
             this.validPasswordLabel.Name = "validPasswordLabel";
             this.validPasswordLabel.Size = new System.Drawing.Size(0, 19);
             this.validPasswordLabel.TabIndex = 14;
             this.validPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // validRepeatLabel
+            // 
+            this.validRepeatLabel.AutoSize = true;
+            this.validRepeatLabel.Location = new System.Drawing.Point(84, 561);
+            this.validRepeatLabel.Name = "validRepeatLabel";
+            this.validRepeatLabel.Size = new System.Drawing.Size(0, 19);
+            this.validRepeatLabel.TabIndex = 15;
+            this.validRepeatLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // createAccountForm
             // 
@@ -178,6 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(500, 600);
+            this.Controls.Add(this.validRepeatLabel);
             this.Controls.Add(this.validPasswordLabel);
             this.Controls.Add(this.validUsernameLabel);
             this.Controls.Add(this.createAccountRegisterButton);
@@ -211,5 +224,6 @@
         private Button createAccountRegisterButton;
         private Label validUsernameLabel;
         private Label validPasswordLabel;
+        private Label validRepeatLabel;
     }
 }
