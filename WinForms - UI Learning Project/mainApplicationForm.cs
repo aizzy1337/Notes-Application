@@ -15,6 +15,7 @@ namespace WinForms___UI_Learning_Project
         public mainApplicationForm()
         {
             InitializeComponent();
+            tasksButtonsLayoutPanel.Visible = false;
         }
 
         private void closeButtonMainPanel_Click(object sender, EventArgs e)
@@ -25,6 +26,17 @@ namespace WinForms___UI_Learning_Project
         private void minimizeButtonMainPanel_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void tasksButton_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tasksButton_Click(object sender, EventArgs e)
+        {
+            tasksButton.ForeColor = Color.Indigo;
+            tasksButtonsLayoutPanel.Visible = true;
         }
     }
 }

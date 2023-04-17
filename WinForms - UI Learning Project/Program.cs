@@ -12,7 +12,6 @@ namespace WinForms___UI_Learning_Project
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new loggingForm());
-            database.createDatabase();
         }
     }
 }

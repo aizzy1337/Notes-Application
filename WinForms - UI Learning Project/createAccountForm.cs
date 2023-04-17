@@ -38,7 +38,7 @@ namespace WinForms___UI_Learning_Project
             if(validUsername && validPassword && validRepeatPassword)
             {
                 MessageBox.Show("Pomyślnie utworzono konto!");
-                database.uploadData(usernameRegisterText.Text, passwordRegisterText.Text);
+                databaseHandlerLogging.insertLoggingInformation(usernameRegisterText.Text, passwordRegisterText.Text);
                 this.Close();
             }
         }

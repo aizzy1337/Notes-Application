@@ -69,7 +69,7 @@ namespace WinForms___UI_Learning_Project
 
         private void logInButton_Click(object sender, EventArgs e)
         {
-            if(database.checkData(usernameText.Text, passwordText.Text))
+            if (databaseHandlerLogging.checkLoggingInformation(usernameText.Text, passwordText.Text))
             {
                 _mainApplicationForm = new mainApplicationForm();
                 _mainApplicationForm.Show();
